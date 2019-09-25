@@ -3,7 +3,6 @@
 #Standard Lib
 import sys
 from random import randint
-import re
 
 #Open Source
 import sounddevice as sd
