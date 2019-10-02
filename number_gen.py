@@ -24,13 +24,11 @@ def main(argv):
 	values = [bin(int(_val))[2:] for _val in values]
 
 	for _row in range(len(values)):
-		curr = _row
 		if len(str(values[_row])) < 8:
-			_row = str(values[_row])
-			padding = 8 - len(values[curr])
+			padding = 8 - len(values[_row])
 			padding = [str(randint(0,1)) for pad in range(padding)]
 			for pad in padding:
-				values[curr] = values[curr] + pad
+				values[_row] = values[_row] + pad
 
 		else:
 			values[_row] = (str(values[_row])[:8])
