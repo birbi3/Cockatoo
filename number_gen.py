@@ -4,7 +4,6 @@
 import sys
 from random import randint
 import binascii
-
 #Open Source
 import sounddevice as sd
 import numpy
@@ -14,9 +13,10 @@ def main(argv, argv2):
 	values = [None] * int(argv2)
 	dur = int(argv[0])
 	fs = 48000
-	myrecording = sd.rec(dur * fs, blocking=True, channels=2)
+	myrecording = sd.rec(int(dur * fs), samplerate=fs,  blocking=True, channels=2)
 	sd.wait()
 	
+	#Why is this needed? The values are immediately replace with the next list comprehension statement
 	for i in range(int(argv2)):
 		values[i] = randint(0, len(myrecording))
 
@@ -42,13 +42,16 @@ def main(argv, argv2):
 
 
 def binary_format(val):
-	temp = val.split("0")
-	temp = "".join(temp)
-	temp = temp.split(".")
-	temp = "".join(temp)
-	temp = temp.split("-")
-	temp = "".join(temp)
-	return temp
+	if(val != '0.0'):
+		temp = val.split("0")
+		temp = "".join(temp)
+		temp = temp.split(".")
+		temp = "".join(temp)
+		temp = temp.split("-")
+		temp = "".join(temp)
+		return temp
+	else:
+		return '0'
 
 if __name__ == '__main__':
 	main(sys.argv[1], sys.argv[2])
