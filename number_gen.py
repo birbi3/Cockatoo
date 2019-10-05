@@ -20,7 +20,7 @@ def main(argv, argv2):
 	for i in range(int(argv2)):
 		values[i] = randint(0, len(myrecording))
 
-	values = [str(myrecording[_val][0]) for _val in range(len(values))]
+	values = [str(myrecording[_val][0]) for _val in values]
 	values = [binary_format(str(values[_row])) for _row in range(len(values))]
 	values = [bin(int(_val))[2:] for _val in values]
 
