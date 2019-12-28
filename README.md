@@ -1,4 +1,4 @@
-# True-Random-Numbers
+# Cockatoo: A True Random Number Generator
 ### On Going Research Project
 A random number generator based on audio data that creates cryptographically secure keys.
 
