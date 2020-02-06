@@ -85,7 +85,7 @@ def binary_format(val):
 
 if __name__ == '__main__':
 	values = list()
-	for i in range(1000):
+	for i in range(100):
 		print(str(i))
 		try:
 			key = main()
