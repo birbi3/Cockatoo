@@ -46,7 +46,7 @@ def main():
 
 def check_values(current_value, recording):
 	test_val = BitArray(bin=current_value)
-	if int(test_val.uint) <= 32:
+	if int(test_val.uint) <= 64:
 		new_value = (sub_recording_parse(recording))
 		return check_values(new_value, recording)
 	elif 127 <= int(test_val.uint):
@@ -85,7 +85,7 @@ def binary_format(val):
 
 if __name__ == '__main__':
 	values = list()
-	for i in range(100):
+	for i in range(10):
 		print(str(i))
 		try:
 			key = main()

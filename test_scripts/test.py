@@ -31,7 +31,7 @@ def plot_data_twenty():
     plt.show()
 
 def plot_stuff():
-    freq  =  pd.read_csv('key_stats_output_2.csv')
+    freq  =  pd.read_csv('key_stats_output.csv')
     freq['value'].plot(kind='hist', bins=[i for i in range(128)])
     plt.show()
 
@@ -40,6 +40,6 @@ def plot_stuff_2():
     freq['value'].plot(kind='hist', bins=[-1, 0, 1, 2])
     plt.show()
 
-plot_stuff_2()
+plot_stuff()
 #csv_data()
 #plot_data_twenty()
